@@ -32,7 +32,7 @@ const Register = () => {
     if (!validateEmail(body.email) || body.password.length < 8) {
       setError("Enter a valid email and password")
     }
-    if (!body.lastName || !body.password /*|| !body.phone*/) {
+    if (!body.email || !body.firstName || !body.lastName || !body.password /*|| !body.phone*/) {
       setError('All fields are required')
     }
     return () => { setError('') }
@@ -46,7 +46,11 @@ const Register = () => {
       await register(body);
       navigation.navigate("Login");
     } catch (error) {
-        setError(error.response ? error.response.data : 'Something went wrong');
+        if (error.response && error.response.status === 409) {
+            setError("Email already registered");
+          } else {
+            setError(error.response ? error.response.data : 'Something went wrong');
+          }
     }
   }
 

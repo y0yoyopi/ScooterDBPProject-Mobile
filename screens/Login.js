@@ -17,16 +17,19 @@ const Login = ({ handleAuthenticate }) => {
         setError('Email and password are required');
         return;
       }
-      const token = await login(email, password);
-        handleAuthenticate(token);
-        navigation.navigate("BottomTabs");
       try {
         const token = await login(email, password);
         handleAuthenticate(token);
         navigation.navigate("BottomTabs");
+
       } catch (error) {
-        setError("Email or password is incorrect");
+        console.log(error.response);
+        if (error.response && error.response.status === 403) {
+          setError("Email or password is incorrect");
+      } else {
+          setError("An unexpected error occurred");
       }
+    }
     }
 
 
