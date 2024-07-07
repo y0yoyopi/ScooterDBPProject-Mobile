@@ -56,7 +56,7 @@ import {SafeAreaView,View,Text,Button,StyleSheet} from "react-native";
         <View>
           {/*<Avatar.Image size={100} source={profileImage} style={styles.avatar} />*/}
           <Text>{info.firstName + " " + info.lastName}</Text>
-          {/* <Text>Email: {info.email}</Text> */}
+          <Text>{info.email}</Text> 
           {/* <Text>Phone Number: {info.phoneNumber}</Text> */}
           <View>
           <Button title="Cerrar sesión" onPress={handleLogout}></Button>

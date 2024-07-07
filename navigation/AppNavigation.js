@@ -5,6 +5,7 @@ import Login from '../screens/Login';
 import BottomTabs from '../screens/BottomTabs';
 import Profile from '../screens/Profile';
 import { useState } from 'react';
+import SearchScreen from '../screens/SearchScreen';
 
 const Stack = createNativeStackNavigator();
 const AppNavigation = () => {
@@ -20,8 +21,8 @@ const AppNavigation = () => {
           {props => <Login {...props} handleAuthenticate={handleAuthenticate} />}
         </Stack.Screen>
         <Stack.Screen name="Register" options={{ headerShown: false }} component={Register} />
-        <Stack.Screen name="BottomTabs" options={{ headerShown: false }} component={BottomTabs}>
-        </Stack.Screen>
+        <Stack.Screen name="BottomTabs" options={{ headerShown: false }} component={BottomTabs}/>
+        <Stack.Screen name="Search" options={{ headerShown: false }} component={SearchScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

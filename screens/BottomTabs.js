@@ -4,6 +4,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeScreen from './HomeScreen';
 //import ActivityScreen from './ActivityScreen';
 import Profile from './Profile';
+import Booking from './Booking';
 
 const BottomTabs = () => {
     const Tab = createBottomTabNavigator();
@@ -16,9 +17,9 @@ const BottomTabs = () => {
 
                     if (route.name === 'Home') {
                         iconName = 'home';
-                    } else if (route.name === 'Activity') {
+                    } /*else if (route.name === 'Activity') {
                         iconName = 'chart-line';
-                    } else if (route.name === 'Profile') {
+                    } */else if (route.name === 'Profile') {
                         iconName = 'account';
                     }
 
@@ -32,6 +33,7 @@ const BottomTabs = () => {
             <Tab.Screen name="Home" component={HomeScreen} />
             {/*<Tab.Screen name="Activity" component={ActivityScreen} />*/}
             <Tab.Screen name="Profile" component={Profile} />
+            <Tab.Screen name="Booking" component={Booking} />
         </Tab.Navigator>
     )
 }
