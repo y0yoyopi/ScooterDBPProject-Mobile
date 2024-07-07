@@ -42,19 +42,21 @@ export const getProfile = async () => {
 
 export const fetchListTours = async () => {
     try {
-        const token = await SecureStore.getItemAsync('token'); // Retrieve token securely
-        const response = await axios.get(`${API_URL}/api/auth/tours`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            }
-
-        });
-        return response.data.content;
+      const token = await SecureStore.getItemAsync('token'); // Retrieve token securely
+      if (!token) {
+        throw new Error('Token not found');
+      }
+      const response = await axios.get(`${API_URL}/api/auth/tours`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching tours:', error);
+      throw error;
     }
-    catch (error) {
-        throw error;
-    }
-};
+  };
 
 export const logout = async () => {
     await SecureStore.deleteItemAsync('token');

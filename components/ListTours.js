@@ -1,26 +1,38 @@
-import { View, StyleSheet, Button, Image, ScrollView } from "react-native";
+import { View, StyleSheet, Button, Image, ScrollView, Text, Dimensions } from "react-native";
 import React from 'react';
 import { useEffect, useState } from "react";
 import { fetchListTours } from "../Api";
 import TourItem from './TourItem';
 
+var {width,height} = Dimensions
+
 const ListTours = ({ category }) => {
 
     const [tours, setTours] = useState([]);
+    const [error, setError] = useState('');
 
     useEffect(() => {
         const fetchTours = async () => {
           try {
             const allTours = await fetchListTours();
-            const filteredTours = allTours.filter(tour => tour.tourCategory.name === category);
+            if (!Array.isArray(allTours)) {
+              throw new Error('Invalid data format');
+            }
+            // Verificamos si tourCategory es un objeto y tiene una propiedad 'name'
+            const filteredTours = allTours.filter(tour => tour.tourCategory && tour.tourCategory.name === category);
             setTours(filteredTours);
           } catch (error) {
-            console.log(error)
+            console.error('Error fetching tours:', error);
+            setError(error.message);
           }
         };
 
         fetchTours();
       }, [category])
+
+      if (error) {
+        return <Text>{error}</Text>;
+      }
 
 
       return (

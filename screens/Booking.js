@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ListTours from '../components/ListTours';
 
-const categories = ['Adventure', 'Romantic', 'Family', 'Cultural'];
+const categories = ['Aventura', 'Cultural', 'Naturaleza', 'Urbano', 'Misterio y Terror'];
 
 
 const Booking = () => {
@@ -28,7 +28,7 @@ const Booking = () => {
 
             {categories.map(category => (
             <View key={category} style={{ marginVertical: 10 }}>
-                <Text>{category} Tours</Text>
+                <Text>{category}</Text>
                 <ListTours category={category} />
             </View>
             ))}
