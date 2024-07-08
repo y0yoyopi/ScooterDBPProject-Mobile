@@ -18,6 +18,8 @@ const Booking = () => {
             <View>
                 <Text>Tour Spotter</Text>
                 <Button title='Search' onPress={() => navigation.navigate('Search')}></Button>
+                <Text>Maps</Text>
+                <Button title='Maps' onPress={() => navigation.navigate('Map')}></Button>
             </View>
         </SafeAreaView>
 

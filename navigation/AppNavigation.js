@@ -27,6 +27,7 @@ const AppNavigation = () => {
         <Stack.Screen name="Search" options={{ headerShown: false }} component={SearchScreen}/>
         <Stack.Screen name="Tour" options={{ headerShown: false }} component={TourScreen}/>
         <Stack.Screen name="Camera" options={{ headerShown: false }} component={CameraScreen}/>
+        <Stack.Screen name="Map" options={{ headerShown: false }} component={MapScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

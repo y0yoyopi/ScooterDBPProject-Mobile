@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import HomeScreen from './HomeScreen';
+
 //import ActivityScreen from './ActivityScreen';
 import Profile from './Profile';
 import Booking from './Booking';
@@ -30,10 +30,11 @@ const BottomTabs = () => {
                 tabBarInactiveTintColor: 'gray',
             })}
         >
-            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Booking" component={Booking} />
             {/*<Tab.Screen name="Activity" component={ActivityScreen} />*/}
             <Tab.Screen name="Profile" component={Profile} />
-            <Tab.Screen name="Booking" component={Booking} />
+            
+            
         </Tab.Navigator>
     )
 }
