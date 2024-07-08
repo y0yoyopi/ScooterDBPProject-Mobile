@@ -11,17 +11,27 @@ const SearchScreen = () => {
     const navigation = useNavigation(); 
 
     return (
-        <SafeAreaView>
-            <View>
-                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                    <XMarkIcon color="black"/>
-                </TouchableOpacity>
-                <MapView style={StyleSheet.absoluteFill}></MapView>
-                    
-            </View>
+        
+            <View style={{flex:1}}>
+                
+                
+            
+                <MapView style={StyleSheet.absoluteFill
+                
+                }></MapView>
 
-        </SafeAreaView>
+<TouchableOpacity style = {styles.a} onPress={() => navigation.navigate('Booking')}>
+                    <XMarkIcon color="black" />
+                </TouchableOpacity>
+            </View>
         
     )
 }
+
+const styles = StyleSheet.create({
+    a:{
+        marginTop:35,
+        marginLeft: 5
+    }
+})
 export default SearchScreen;

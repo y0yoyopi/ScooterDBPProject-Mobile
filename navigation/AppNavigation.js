@@ -8,6 +8,7 @@ import { useState } from 'react';
 import SearchScreen from '../screens/SearchScreen';
 import TourScreen from '../screens/TourScreen';
 import CameraScreen from '../screens/CameraScreen';
+import MapScreen from '../screens/MapScreen';
 
 const Stack = createNativeStackNavigator();
 const AppNavigation = () => {

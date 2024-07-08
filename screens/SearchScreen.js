@@ -13,7 +13,7 @@ const SearchScreen = () => {
         <SafeAreaView>
             <View>
                 <TextInput placeholder='Search Tour'/>
-                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Booking')}>
                     <XMarkIcon color="black"/>
                 </TouchableOpacity>
                     
