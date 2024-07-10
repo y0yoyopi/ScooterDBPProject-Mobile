@@ -19,11 +19,6 @@ const Booking = () => {
             <View style={tw`absolute top-0 left-0 right-0 bottom-0 bg-black opacity-30`} />
             <SafeAreaView style={tw`flex-1`}>
 
-
-            <TouchableOpacity onPress={() => navigation.navigate('TourSpotterTools')}>
-        <XMarkIcon color="red" />
-      </TouchableOpacity>
-
                 <View style={tw`flex-row items-center justify-center p-4 m-15`}>
                     <Text style={tw`text-5xl font-bold text-blue-500`}>Tour</Text>
                     <Text style={tw`text-5xl font-bold text-purple-500`}>Spotter</Text>
