@@ -4,6 +4,7 @@ import { Text } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { XMarkIcon } from 'react-native-heroicons/outline';
 import ListTours from '../components/ListTours';
 import tw from 'twrnc';
 
@@ -17,6 +18,12 @@ const Booking = () => {
         <ImageBackground source={require('../app-images/394937632_824233713040166_6969483681223020049_n.jpg')} style={tw`flex-1`}>
             <View style={tw`absolute top-0 left-0 right-0 bottom-0 bg-black opacity-30`} />
             <SafeAreaView style={tw`flex-1`}>
+
+
+            <TouchableOpacity onPress={() => navigation.navigate('TourSpotterTools')}>
+        <XMarkIcon color="red" />
+      </TouchableOpacity>
+
                 <View style={tw`flex-row items-center justify-center p-4 m-15`}>
                     <Text style={tw`text-5xl font-bold text-blue-500`}>Tour</Text>
                     <Text style={tw`text-5xl font-bold text-purple-500`}>Spotter</Text>

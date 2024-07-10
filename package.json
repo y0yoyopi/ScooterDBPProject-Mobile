@@ -16,8 +16,10 @@
     "axios": "^1.7.2",
     "expo": "~51.0.17",
     "expo-camera": "~15.0.13",
+    "expo-location": "~17.0.1",
     "expo-media-library": "~16.0.4",
     "expo-secure-store": "~13.0.2",
+    "expo-sensors": "~13.0.9",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
     "react-native": "0.74.2",
@@ -33,7 +35,10 @@
     "twrnc": "^4.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/runtime": "^7.24.7"
   },
   "private": true
 }

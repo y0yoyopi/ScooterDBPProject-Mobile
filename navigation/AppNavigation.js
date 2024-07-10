@@ -12,6 +12,7 @@ import TourScreen from '../screens/TourScreen';
 import CameraScreen from '../screens/CameraScreen';
 import MapScreen from '../screens/MapScreen';
 import Booking from '../screens/Booking';
+import TourSpotterTools from '../screens/TourSpotterTools';
 
 const Stack = createNativeStackNavigator();
 const AppNavigation = () => {
@@ -35,6 +36,7 @@ const AppNavigation = () => {
         <Stack.Screen name="Tour" options={{ headerShown: false }} component={TourScreen}/>
         <Stack.Screen name="Camera" options={{ headerShown: false }} component={CameraScreen}/>
         <Stack.Screen name="Map" options={{ headerShown: false }} component={MapScreen}/>
+        <Stack.Screen name="TourSpotterTools" options={{ headerShown: false }} component={TourSpotterTools}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

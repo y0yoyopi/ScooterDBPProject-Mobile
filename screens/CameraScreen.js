@@ -28,7 +28,7 @@ export default function CameraScreen() {
         return <View><Text>Requesting camera permission...</Text></View>;
     }
     if (hasCameraPermission === false) {
-        return <Text>No access to camera</Text>;
+        return <Text>No hay acceso a cámara</Text>;
     }
 
     const takePicture = async () => {
@@ -47,38 +47,39 @@ export default function CameraScreen() {
             >
                 <View style={styles.buttonContainer}>
     
-                    <TouchableOpacity
-                        style={styles.button}
-                        onPress={takePicture}>
-                        <Text style={styles.text}>Take Picture</Text>
-                    </TouchableOpacity>
+                     <TouchableOpacity
+                 style={styles.button}
+                    onPress={takePicture}
+                 />
                 </View>
             </CameraView>
-            {image && <Image source={{ uri: image }} style={styles.imagePreview} />}
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+      flex: 1,
     },
     camera: {
-        flex: 1,
+      flex: 1,
     },
     buttonContainer: {
-        flex: 1,
-        backgroundColor: 'transparent',
-        flexDirection: 'row',
-        margin: 20,
+      position: 'absolute',
+      bottom: 30, // Ajusta este valor según sea necesario
+      width: '100%',
+      alignItems: 'center',
     },
     button: {
-        flex: 0.1,
-        alignSelf: 'flex-end',
-        alignItems: 'center',
+      width: 55,
+      height: 55,
+      borderRadius: 35,
+      backgroundColor: 'white',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
-    text: {
-        fontSize: 18,
-        color: 'white',
+    imagePreview: {
+      width: width,
+      height: height / 2,
     },
-});
+  });
