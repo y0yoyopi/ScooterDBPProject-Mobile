@@ -48,7 +48,7 @@ const TourScreen = () => {
         <View>
         <SafeAreaView>
             <View>
-                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Booking')}>
                     <XMarkIcon color="black"/>
                 </TouchableOpacity>
             </View>
@@ -57,10 +57,8 @@ const TourScreen = () => {
             <Image source={imageMap[tour.imageUrl]} style={styles.image} />
             <Text>{tour.title}</Text>
 
-            <TouchableOpacity onPress={toggleDescription}>
-            <Text style={styles.itineraryTitle}>Description</Text>
-            {isDescriptionExpanded && <Text style={styles.itineraryText}>{tour.description}</Text>}
-            </TouchableOpacity>
+            <Text>{tour.description}</Text>
+
 
             <TouchableOpacity onPress={toggleItinerary}>
             <Text style={styles.itineraryTitle}>Itinerary</Text>
